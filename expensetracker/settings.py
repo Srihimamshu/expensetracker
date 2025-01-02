@@ -14,6 +14,8 @@ from dotenv import load_dotenv
 import os
 from pathlib import Path
 import django_heroku
+from whitenoise import WhiteNoise
+
 
 
 load_dotenv()
@@ -49,6 +51,7 @@ INSTALLED_APPS = [
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware'
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
@@ -99,10 +102,11 @@ DATABASES = {
         'USER': os.getenv('DB_USER'),
         'PASSWORD': os.getenv('DB_PASSWORD'),
         'HOST': os.getenv('DB_HOST'),
+        'PORT': os.getenv('DB_PORT','5432'),
     }
 }
 
-
+SECRET_KEY=os.getenv('SECRET_KEY')
 # Password validation
 # https://docs.djangoproject.com/en/5.1/ref/settings/#auth-password-validators
 

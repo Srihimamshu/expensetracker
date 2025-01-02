@@ -5,12 +5,12 @@ name = "pypi"
 
 [packages]
 scrapy-djangoitem = "*"
-django = "*"
 psycopg2 = "*"
 django-heroku = "*"
 uvicorn = "*"
 gunicorn = "*"
 waitress = "*"
+django = "*"
 
 [dev-packages]
 
