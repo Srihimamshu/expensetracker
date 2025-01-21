@@ -11,6 +11,9 @@ uvicorn = "*"
 gunicorn = "*"
 waitress = "*"
 django = "*"
+validate-email = "*"
+py3-validate-email = "*"
+six = "*"
 
 [dev-packages]
 
